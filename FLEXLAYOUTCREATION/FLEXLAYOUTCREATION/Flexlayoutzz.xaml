@@ -3,11 +3,11 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="FLEXLAYOUTCREATION.Flexlayoutzz"
              Title="Flexlayoutzz">
-    <HorizontalStackLayout 
-        <Label   
+    <HorizontalStackLayout >
+        <Button  
             Text="Action1"
-            HeightRequest="105"
-            WidthRequest="220" />
+            HeightRequest="100"
+            WidthRequest="200" />
         <Button  
      Text="Action2"
      HeightRequest="100"
