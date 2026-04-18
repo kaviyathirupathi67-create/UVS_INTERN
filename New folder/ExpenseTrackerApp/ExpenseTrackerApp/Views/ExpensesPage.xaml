@@ -1,0 +1,67 @@
+<ContentPage 
+    xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    x:Class="ExpenseTrackerApp.Views.ExpensePage"
+    Title="Expenses">
+
+    <VerticalStackLayout Padding="10" Spacing="10">
+
+        <!-- Header -->
+        <Label Text="Expense List"
+               FontSize="24"
+               HorizontalOptions="Center"/>
+
+        <!-- Add Expense Button -->
+        <Button Text="➕ Add Expense"
+                Clicked="OnAddExpenseClicked"/>
+
+        <!-- Expense List -->
+        <CollectionView ItemsSource="{Binding Expenses}">
+
+            <CollectionView.ItemTemplate>
+                <DataTemplate>
+
+                    <Frame BorderColor="Gray"
+                           Padding="10"
+                           Margin="5"
+                           CornerRadius="10">
+
+                        <VerticalStackLayout Spacing="5">
+
+                            <!-- Title -->
+                            <Label Text="{Binding Title}"
+                                   FontAttributes="Bold"
+                                   FontSize="18"/>
+
+                            <!-- Amount -->
+                            <Label Text="{Binding Amount, StringFormat='Amount: {0}'}" />
+
+                            <!-- Category -->
+                            <Label Text="{Binding CategoryName, StringFormat='Category: {0}'}" />
+
+                            <!-- Date -->
+                            <Label Text="{Binding Date, StringFormat='Date: {0:dd-MM-yyyy}'}" />
+
+                            <!-- Note -->
+                            <Label Text="{Binding Note}"
+                                   FontSize="12"
+                                   TextColor="Gray"/>
+
+                            <!-- Delete Button -->
+                            <Button Text="Delete"
+                                    BackgroundColor="Red"
+                                    TextColor="White"
+                                    Command="{Binding Source={RelativeSource AncestorType={x:Type ContentPage}}, Path=BindingContext.DeleteCommand}"
+                                    CommandParameter="{Binding Id}" />
+
+                        </VerticalStackLayout>
+
+                    </Frame>
+
+                </DataTemplate>
+            </CollectionView.ItemTemplate>
+
+        </CollectionView>
+
+    </VerticalStackLayout>
+</ContentPage>

@@ -1,0 +1,22 @@
+ using ExpenseTracker.Views;
+    x:Class="ExpenseTracker.Views.HomePage"
+
+namespace ExpenseTracker.Views;
+
+public partial class HomePage : ContentPage
+{
+    public HomePage()
+    {
+        InitializeComponent();
+    }
+
+    private async void GoToCategories(object sender, EventArgs e)
+    {
+        await Navigation.PushAsync(new CategoriesPage());
+    }
+
+    private async void GoToExpenses(object sender, EventArgs e)
+    {
+        await Navigation.PushAsync(new ExpensesPage());
+    }
+}
