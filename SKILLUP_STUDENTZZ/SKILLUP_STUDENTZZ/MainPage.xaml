@@ -1,0 +1,23 @@
+﻿<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="SKILLUP_STUDENTZZ.MainPage">
+
+    <VerticalStackLayout Padding="20" Spacing="15">
+
+        <Label x:Name="questionLabel"
+               Text="Tell me about yourself"
+               FontSize="20" />
+
+        <Entry x:Name="answerEntry"
+               Placeholder="Type your answer" />
+
+        <Button Text="Submit"
+                Clicked="OnSubmitClicked" />
+
+        <Label x:Name="resultLabel"
+               Text=""
+               FontSize="18" />
+
+    </VerticalStackLayout>
+
+</ContentPage>
