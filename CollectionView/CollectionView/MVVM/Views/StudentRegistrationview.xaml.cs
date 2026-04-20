@@ -1,2 +1,0 @@
-using Collectionview.MVVM.ViewModels;
-
